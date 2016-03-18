@@ -11,12 +11,12 @@ A web application that uses Ajax to make an API request and JavaScript to displa
 
 * Clone repository from GitHub.
 * Navigate to directory.
-* $ npm init
-* $ npm install
-* $ bower init
-* $ bower install
-* $ gulp build
-* $ gulp serve
+* `$ npm init`
+* `$ npm install`
+* `$ bower init`
+* `bower install`
+* `$ gulp build`
+* `$ gulp serve`
 
 
 ## Technologies Used
