@@ -1,14 +1,20 @@
 var apiKey = require('./../.env').apiKey;
-var getRepos = require('../js/get-repositories.js').getRepos;
-var getUserInfo = require('../js/get-user-info.js').getUserInfo;
+var getRepos = require('../js/github-interface.js').getRepos;
+var getUserInfo = require('../js/github-interface.js').getUserInfo;
 
 $(document).ready(function() {
+  $('#clearResults').hide();
   $('form#generateUser').submit(function(event) {
-    event.preventDefault();
     var username = $('#ghUsername').val();
     getUserInfo();
     getRepos();
-
+    $('form#generateUser')[0].reset();
+    $('#clearResults').show();
+    $('#clearResults').click(function() {
+      $('div.user-info').empty();
+      $('div.user-repos').empty();
+    });
+    event.preventDefault();
   });
 
 });
