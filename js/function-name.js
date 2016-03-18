@@ -1,10 +1,11 @@
-// exports.Constructor = function(argument){
+// exports.Github = function(argument){
 //   this.argument = argument;
 // };
 //
-// exports.Constructor.prototype.method = function() {
+// exports.Github.prototype.method = function() {
 //
 // };
 
-
-/* functional backend code goes in this file */
+exports.getRepos = function() {
+  $.get('')
+}

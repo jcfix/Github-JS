@@ -1,0 +1,7 @@
+bower_components/
+build/
+.DS_Store
+.env
+node_modules/
+tmp/
+vendor/
