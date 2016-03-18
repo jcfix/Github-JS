@@ -1,5 +1,5 @@
 var apiKey = require('./../.env').apiKey;
-// var getRepos = require('../js/get-repositories.js').getRepos;
+var getRepos = require('../js/get-repositories.js').getRepos;
 var getUserInfo = require('../js/get-user-info.js').getUserInfo;
 
 $(document).ready(function() {
@@ -7,6 +7,7 @@ $(document).ready(function() {
     event.preventDefault();
     var username = $('#ghUsername').val();
     getUserInfo();
+    getRepos();
 
   });
 
