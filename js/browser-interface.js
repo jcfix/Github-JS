@@ -9,11 +9,15 @@ $(document).ready(function() {
     getUserInfo();
     getRepos();
     $('form#generateUser')[0].reset();
+    $('form#generateUser').hide();
     $('#clearResults').show();
     $('#clearResults').click(function() {
       $('div.user-info').empty();
       $('div.user-repos').empty();
+      $('form#generateUser').show();
+      $('div.btn-holder').hide();
     });
+    $('div.btn-holder').show();
     event.preventDefault();
   });
 
