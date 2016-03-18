@@ -5,11 +5,17 @@ exports.getUserInfo = function() {
   $.get('https://api.github.com/users/' + username + '?access_token=' + apiKey).then(function(response) {
     console.log(response);
 
+    if (response.avatar_url != null) {
+      $('div.user-info').append('<img src ="' + response.avatar_url + '" alt ="user avatar image">');
+    };
     $('div.user-info').append('<h1>' + response.login + '</h1>');
     if (response.name != null) {
       $('div.user-info').append('<h4>' + response.name + '</h4>');
     };
     if (response.company != null) {
+      $('div.user-info').append('<p>' + response.company + '</p>');
+    };
+    if (response.email != null) {
       $('div.user-info').append('<p>' + response.company + '</p>');
     };
     if (response.location != null) {
@@ -20,6 +26,20 @@ exports.getUserInfo = function() {
     console.log(error.responseJSON.message);
   });
 }
+
+// exports.getFollowers = function() {
+//   var username = $('#ghUsername').val();
+//   $.get('https://api.github.com/users/' + username + '/followers?access_token=' + apiKey).then(function(followers){
+//     console.log(followers);
+//     $('div.user-followers').append('<h4>FOLLOWERS<h4><br>');
+//     var count = 0;
+//     for(var i = 0; i < followers.length ; i++) {
+//       $('div.users-followers').append('')
+//     }
+//   }).fail(function(error) {
+//     console.log(error.responseJSON.message);
+//   });
+// }
 
 exports.getRepos = function(){
   var username = $('#ghUsername').val();
