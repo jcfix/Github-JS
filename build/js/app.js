@@ -1,14 +1,22 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-// var Constructor = require('../js/function-name.js').Constructor;
-//
-// $(document).ready(function() {
-//
-// var newConstructor = new Constructor();
-//
-//
-// });
+exports.apiKey = "f3e6a48c80583843f72aecc17212d22a01af5031";
 
+},{}],2:[function(require,module,exports){
+var apiKey = require('./../.env').apiKey;
+// var getRepos = require('../js/get-repositories.js').getRepos;
 
-/* Front-end User interface (jquery) code goes in this file */
+$(document).ready(function() {
+  $('form#generateUser').submit(function(event) {
+    event.preventDefault();
+    var username = $('#ghUsername').val();
+    $.get('https://api.github.com/users/' + username + '?access_token=' + apiKey).then(function(response) {
+      console.log(JSON.stringify(response));
+      $('div.search-result').html('<h1>' + username + '</h1>');
+    }).fail(function(error) {
+      console.log(error.responseJSON.message);
+    });
+  });
 
-},{}]},{},[1]);
+});
+
+},{"./../.env":1}]},{},[2]);
