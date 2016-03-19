@@ -8,7 +8,7 @@ exports.getUserInfo = function() {
     if (response.avatar_url != null) {
       $('div.user-info').append('<img src ="' + response.avatar_url + '" alt ="user avatar image">');
     };
-    $('div.user-info').append('<h1>' + response.login + '</h1>');
+    $('div.user-info').append('<a href="https://www.github.com/' + response.login + '"><h1>' + response.login + '</h1></a>');
     if (response.name != null) {
       $('div.user-info').append('<h4>' + response.name + '</h4>');
     };
@@ -21,25 +21,16 @@ exports.getUserInfo = function() {
     if (response.location != null) {
       $('div.user-info').append('<p>' + response.location + '</p>');
     };
+    if (response.followers != null) {
+      $('div.user-info').append('<p>FOLLOWERS: ' + response.followers + '</p>');
+    } else {
+      $('div.user-info').append('<p>FOLLOWERS: 0</p>');
+    };
 
   }).fail(function(error) {
     console.log(error.responseJSON.message);
   });
 }
-
-// exports.getFollowers = function() {
-//   var username = $('#ghUsername').val();
-//   $.get('https://api.github.com/users/' + username + '/followers?access_token=' + apiKey).then(function(followers){
-//     console.log(followers);
-//     $('div.user-followers').append('<h4>FOLLOWERS<h4><br>');
-//     var count = 0;
-//     for(var i = 0; i < followers.length ; i++) {
-//       $('div.users-followers').append('')
-//     }
-//   }).fail(function(error) {
-//     console.log(error.responseJSON.message);
-//   });
-// }
 
 exports.getRepos = function(){
   var username = $('#ghUsername').val();
@@ -53,5 +44,3 @@ exports.getRepos = function(){
     console.log(error.responseJSON.message);
   });
 }
-
-// + moment(repos[i].created_at).format('L') + "</td></tr>"

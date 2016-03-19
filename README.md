@@ -11,6 +11,13 @@ A web application that uses Ajax to make an API request and JavaScript to displa
 
 * Clone repository from GitHub.
 * Navigate to directory.
+
+You will need an API key from GitHub to use this application, which can be obtained via your personal GitHub settings.
+
+Create a .env file at the top of your directory and insert the following code: `exports.apiKey = "API_KEY_GOES_HERE";`
+
+Make sure to add .env to your .gitignore file before pushing to GitHub.
+
 * `$ npm init`
 * `$ npm install`
 * `$ bower init`
@@ -24,6 +31,7 @@ A web application that uses Ajax to make an API request and JavaScript to displa
 * HTML5
 * CSS3
 * Bootstrap
+* SASS
 * JavaScript
 * jQuery
 * Node.js
