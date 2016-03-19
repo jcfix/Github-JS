@@ -16,7 +16,7 @@ exports.getUserInfo = function() {
       $('div.user-info').append('<p>' + response.company + '</p>');
     };
     if (response.email != null) {
-      $('div.user-info').append('<p>' + response.company + '</p>');
+      $('div.user-info').append('<p>' + response.email + '</p>');
     };
     if (response.location != null) {
       $('div.user-info').append('<p>' + response.location + '</p>');

@@ -2,7 +2,13 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 .header {
+  height: 100vh;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5%;
   letter-spacing: 1.2px;
+  transition: all 1s ease-in-out;
+}
+
+.result {
+  height: 30vh !important;
 }

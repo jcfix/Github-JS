@@ -1,12 +1,16 @@
+#generateUser {
+  margin-top: 2%;
+}
 input {
   color: black;
   background-color: transparent;
   border-radius: 5px;
   border-width: .7px;
-  padding-top: 0.4em;
-  padding-bottom: 0.4em;
-  padding-left: 0.4em;
-  padding-right: 0.4em;
+  padding: 0.4em 0.4em 0.4em 0.4em;
+}
+
+.search-result {
+  margin-top: 6%;
 }
 
 .user-info {

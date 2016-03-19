@@ -3,13 +3,17 @@
 // -----------------------------------------------------------------------------
 
 button {
-  color: black;
-  background-color: transparent;
+  color: white;
+  background-color: #0277BD;
+  opacity: 0.6;
   border-radius: 5px;
-  border-width: .7px;
-  padding-top: 0.7em;
-  padding-bottom: 0.7em;
-  padding-left: 1em;
-  padding-right: 1em;
+  border: none;
+  padding: 0.4em 0.8em 0.4em 0.8em;
   margin-left: 5px;
+  &:hover {
+    background-color: #E65100;
+  }
+  &:focus {
+    outline: none;
+  }
 }

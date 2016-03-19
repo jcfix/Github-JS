@@ -1,7 +1,6 @@
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
-
 *,
 *::before,
 *::after {
@@ -12,12 +11,27 @@
 html, body {
   padding: 0px;
   color: tomato;
+  font-family: 'andikaNewBasic';
 }
 
+hr {
+  margin-top: 4%;
+  width: 200px;
+}
 
-/**
- * Basic styles for links
- */
+img {
+  height: 360px;
+  border-radius: 20%;
+}
+
 a {
+  letter-spacing: 1px;
   text-decoration: none;
+  transition: all 400ms ease;
+  &:hover {
+    color: #67ADD7;
+    transition: all 400ms ease;
+    text-decoration: none;
+    letter-spacing: 3px;
+  }
 }
